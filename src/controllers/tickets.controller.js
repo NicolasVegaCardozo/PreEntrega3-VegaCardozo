@@ -1,4 +1,5 @@
 import ticketModel from '../models/tickets.models.js';
+import { v4 as uuidv4 } from 'uuid'
 
 const getTickets = async (req, res) => {
 	try {
