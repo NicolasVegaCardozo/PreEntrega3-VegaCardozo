@@ -50,6 +50,10 @@ const purchaseCart = async (req, res) => {
 			});
 			console.log(purchaseItems);
 			await cartModel.findByIdAndUpdate(cid, { products: [] });
+
+			// Aquí usamos .toFixed() para redondear 'amount' a dos decimales
+			let amountFixed = parseFloat(amount.toFixed(2));
+
 			res.redirect(
 				`http://localhost:8080/api/tickets/create?amount=${amount}&email=${email}`
 			);
